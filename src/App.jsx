@@ -12,9 +12,15 @@ import SigninForm from './components/SigninForm/SigninForm'
 const App = () => {
   const [user, setUser] = useState(null);
 
+  const handleSignout = () => {
+    authService.signout()
+    setUser(null)
+  }
+
   return (
     <>
-      <NavBar user={user} />
+      <NavBar user={user} handleSignout={handleSignout} /> // pass the logout functionality to the navbar
+      
       <Routes>
       {
         user ?

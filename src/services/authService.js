@@ -44,4 +44,10 @@ const signin = async (user) => {
   }
 };
 
+const signout = () => {
+  localStorage.removeItem('token');
+};
+
+export { signup, signin, getUser, signout };
+
 export { signup, signin };
